@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Asclepio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link rel="preload" href="/static/styles.css" as="style" />
+    <link rel="preload" href="/static/assets/asclepio-hero.png" as="image" />
+    <link rel="preload" href="/static/assets/asclepio-mascot.png" as="image" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <nav class="navbar" aria-label="Navegacao principal">
+          <a class="brand" href="#topo" aria-label="Asclepio">
+            <span class="brand-mark mascot-brand"><img src="/static/assets/asclepio-mascot.png" alt="" /></span>
+            <span>Asclepio</span>
+          </a>
+          <div class="nav-links">
+            <a href="#triagem">Triagem</a>
+            <a href="#triagem" data-open-view="historico">Historico</a>
+            <a href="#seguranca">Seguranca</a>
+          </div>
+          <span id="status" class="status">offline</span>
+        </nav>
+
+        <div id="topo" class="hero-content openclaw-hero">
+          <div class="mascot-stage hero-mascot" aria-hidden="true">
+            <img src="/static/assets/asclepio-mascot.png" alt="" />
+          </div>
+          <p class="eyebrow emerald">Personal clinical AI agent</p>
+          <h1><span>Asclepio</span></h1>
+          <h2>A IA que realmente faz triagem.</h2>
+          <p class="hero-copy">
+            Conversa com o paciente, organiza sintomas e gera orientacoes.<br />
+            Tudo rodando localmente com Python, SQLite e terminal.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#triagem"><i class="bi bi-clipboard2-pulse"></i> Iniciar triagem</a>
+            <a class="button ghost" href="#triagem" data-open-view="historico"><i class="bi bi-clock-history"></i> Ver historico</a>
+          </div>
+        </div>
+
+        <aside class="terminal-card hero-terminal" aria-label="Fluxo do atendimento no terminal">
+          <div class="terminal-top">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>PowerShell - asclepio</strong>
+          </div>
+          <pre><code>PS C:\Users\Marlo\Desktop\asclepio> .\asclepio.bat
+
+[asclepio.ai] iniciando agente clinico local...
+[agente:triagem] coletando sinais e sintomas
+[agente:extracao] estruturando dados clinicos
+[agente:seguranca] verificando sinais de alarme
+[agente:analise] gerando hipotese orientativa
+[agente:orientacao] preparando recomendacoes
+
+saida => relatorio.txt + data/asclepio.db</code></pre>
+        </aside>
+      </section>
+
+      <section class="quick-start" aria-label="Quick Start">
+        <div class="quick-heading">
+          <p class="eyebrow emerald">⟩ Quick Start</p>
+          <h2>Um comando. Um agente.</h2>
+        </div>
+        <article class="quick-terminal">
+          <div class="terminal-top">
+            <span></span>
+            <span></span>
+            <span></span>
+            <strong>PowerShell</strong>
+          </div>
+          <pre><code># abrir a interface web
+PS C:\Users\Marlo\Desktop\asclepio> .\ABRIR_FRONTEND.bat
+
+# usar direto no terminal
+PS C:\Users\Marlo\Desktop\asclepio> .\asclepio.bat</code></pre>
+        </article>
+      </section>
+
+      <section id="seguranca" class="feature-strip" aria-label="Recursos">
+        <article>
+          <i class="bi bi-window-sidebar feature-icon"></i>
+          <span>01</span>
+          <strong>Agente com interface web</strong>
+          <p>A tela organiza o atendimento enquanto o agente Python executa o raciocinio no backend.</p>
+        </article>
+        <article>
+          <i class="bi bi-diagram-3 feature-icon"></i>
+          <span>02</span>
+          <strong>Pipeline de IA</strong>
+          <p>Triagem, extração, segurança, análise inicial e orientação trabalham em sequência.</p>
+        </article>
+        <article>
+          <i class="bi bi-database-check feature-icon"></i>
+          <span>03</span>
+          <strong>Memória local</strong>
+          <p>Cada atendimento do agente pode virar relatorio e registro no banco local SQLite.</p>
+        </article>
+      </section>
+
+      <section id="triagem" class="workspace">
+        <div class="workspace-head">
+          <div>
+            <p class="eyebrow">Agente em execução</p>
+            <h2>Nova triagem</h2>
+          </div>
+          <div class="tabs" aria-label="Navegacao da area de trabalho">
+            <button class="tab active" type="button" data-view="triagem">Triagem</button>
+            <button class="tab" type="button" data-view="historico">Historico</button>
+          </div>
+        </div>
+
+        <section id="view-triagem" class="view active">
+          <div class="app chat-app">
+            <section class="panel form-panel chat-panel">
+              <div class="section-head">
+                <div>
+                  <p class="eyebrow">Chat de triagem</p>
+                  <h3>Converse com o Asclepio</h3>
+                </div>
+              </div>
+
+              <form id="form-atendimento" class="chat-form">
+                <div class="chat-thread" aria-label="Conversa de triagem">
+                  <article class="message assistant">
+                    <div class="message-avatar mascot-avatar">
+                      <img src="/static/assets/asclepio-mascot.png" alt="" />
+                    </div>
+                    <div class="message-bubble">
+                      <strong>Asclepio</strong>
+                      <p>Olá. Descreva seus sintomas como se estivesse conversando comigo. Inclua quando começou, intensidade e qualquer sinal importante.</p>
+                    </div>
+                  </article>
+
+                  <article class="message user-preview">
+                    <div class="message-avatar"><i class="bi bi-person"></i></div>
+                    <div class="message-bubble muted-bubble">
+                      <strong>Você</strong>
+                      <p>Ex.: Estou com dor de cabeça há 2 dias, intensidade 6/10, com enjoo e sensibilidade à luz.</p>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="chat-composer">
+                  <label class="sr-only" for="sintomas">Mensagem para o Asclepio</label>
+                  <textarea id="sintomas" name="sintomas" rows="5" required placeholder="Mensagem para o Asclepio..."></textarea>
+                  <div class="composer-actions">
+                    <label class="check">
+                      <input name="salvar_txt" type="checkbox" checked />
+                      Salvar relatório
+                    </label>
+                    <button id="submit" class="primary-action send-button" type="submit"><i class="bi bi-send"></i> Enviar</button>
+                  </div>
+                </div>
+
+                <details class="patient-details">
+                  <summary><i class="bi bi-sliders"></i> Dados opcionais do paciente</summary>
+                  <div class="details-grid">
+                    <div class="grid two">
+                      <label data-cli="nome">
+                        Nome
+                        <input name="nome" autocomplete="name" placeholder="Ex.: Maria" />
+                      </label>
+                      <label data-cli="idade">
+                        Idade
+                        <input name="idade" type="number" min="0" max="130" placeholder="Ex.: 32" />
+                      </label>
+                    </div>
+
+                    <div class="grid two">
+                      <label data-cli="sexo">
+                        Sexo
+                        <select name="sexo">
+                          <option value="">Selecione</option>
+                          <option>Feminino</option>
+                          <option>Masculino</option>
+                          <option>Outro</option>
+                        </select>
+                      </label>
+                      <label data-cli="cidade">
+                        Cidade
+                        <input name="cidade" autocomplete="address-level2" placeholder="Ex.: Sao Paulo" />
+                      </label>
+                    </div>
+
+                    <div class="grid two">
+                      <label data-cli="duracao">
+                        Duração
+                        <input name="duracao" placeholder="Ex.: ha 2 dias" />
+                      </label>
+                      <label data-cli="intensidade">
+                        Intensidade da dor
+                        <input name="intensidade" type="range" min="0" max="10" value="5" />
+                        <output id="intensidade-label">5/10</output>
+                      </label>
+                    </div>
+
+                    <label data-cli="sintomas-associados">
+                      Sintomas associados
+                      <input name="sintomas_associados" placeholder="Ex.: febre, nausea, tontura" />
+                    </label>
+
+                    <label data-cli="sinais-alarme">
+                      Sinais de alarme
+                      <input name="sinais_alarme" placeholder="Ex.: falta de ar, dor no peito" />
+                    </label>
+
+                    <div class="grid two">
+                      <label data-cli="doencas-previas">
+                        Doenças prévias
+                        <input name="doencas_previas" placeholder="Ex.: diabetes, asma" />
+                      </label>
+                      <label data-cli="alergias">
+                        Alergias
+                        <input name="alergias" placeholder="Ex.: dipirona" />
+                      </label>
+                    </div>
+
+                    <label data-cli="medicamentos">
+                      Medicamentos em uso
+                      <input name="medicamentos_em_uso" placeholder="Ex.: losartana, metformina" />
+                    </label>
+
+                    <label data-cli="contexto">
+                      Contexto especial
+                      <input name="contexto_especial" placeholder="Ex.: gestante, idoso, crianca" />
+                    </label>
+                  </div>
+                </details>
+
+                <div class="actions secondary-actions">
+                  <button id="reset" class="secondary" type="reset"><i class="bi bi-eraser"></i> Limpar conversa</button>
+                </div>
+              </form>
+            </section>
+
+            <section class="panel result-panel" aria-live="polite">
+              <div class="section-head">
+                <div>
+                  <p class="eyebrow">Resposta do agente</p>
+                  <h3 id="result-title">Aguardando execução</h3>
+                </div>
+              </div>
+              <div id="loading" class="loading hidden">
+                <div class="console-output">
+                  <p><span>$</span> python asclepio.py --web-request</p>
+                  <p><span>></span> ativando agentes clinicos...</p>
+                  <p><span>></span> processando triagem com IA...</p>
+                </div>
+              </div>
+              <div id="empty" class="empty">
+                <div class="console-output">
+                  <p><span>$</span> agente aguardando input</p>
+                  <p><span>></span> preencha os dados e execute a IA</p>
+                </div>
+              </div>
+              <div id="resultado" class="resultado hidden"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="view-historico" class="view">
+          <section id="historico" class="panel history-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Banco local</p>
+                <h3>Atendimentos salvos</h3>
+              </div>
+              <button id="refresh-history" class="secondary small" type="button"><i class="bi bi-arrow-clockwise"></i> Atualizar</button>
+            </div>
+            <div id="history-loading" class="loading hidden">Carregando historico...</div>
+            <div id="history-empty" class="empty hidden">Nenhum atendimento salvo ainda.</div>
+            <div id="history-list" class="history-list"></div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script type="module" src="/static/js/app.js"></script>
+  </body>
+</html>

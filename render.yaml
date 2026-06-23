@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: asclepio
+    env: python
+    plan: free
+    buildCommand: python -m pip install --upgrade pip
+    startCommand: python site_server.py
+    healthCheckPath: /healthz
+    envVars:
+      - key: ASCLEPIO_DB_PATH
+        value: /tmp/asclepio.db
+      - key: ASCLEPIO_REPORTS_DIR
+        value: /tmp/relatorios

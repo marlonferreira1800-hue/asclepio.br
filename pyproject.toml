@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "asclepio"
+version = "0.1.0"
+description = "Agente de pre-diagnostico medico multi-agente no terminal"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.0.0",
+    "rich>=13.0.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.scripts]
+asclepio = "asclepio:main"
+
+[tool.setuptools]
+py-modules = [
+    "asclepio",
+    "agent_utils",
+    "agents",
+    "clinical_tools",
+    "client",
+    "config",
+    "database",
+    "extraction_agent",
+    "interface",
+    "knowledge",
+    "memory",
+    "observability",
+    "orientation_agent",
+    "prediagnosis_agent",
+    "prompts",
+    "reports",
+    "reviewer",
+    "safety",
+    "safety_agent",
+    "schemas",
+    "state",
+    "triage_agent",
+    "triage_constants",
+]
