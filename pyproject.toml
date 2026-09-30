@@ -9,7 +9,7 @@ description = "Sistema inteligente multi-agente de triagem médica e orientaçã
 readme = "README.md"
 license = { text = "MIT" }
 authors = [
-    { name = "Marlon Ferreira", email = "marlonferreira1800@gmail.com" }
+    { name = "Marlon Ferreira" }
 ]
 keywords = [
     "medical-ai",
