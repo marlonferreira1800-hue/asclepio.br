@@ -4,12 +4,15 @@
 
 ### Sistema Inteligente Multi-Agente para Triagem Médica Orientativa
 
+[![Netlify Status](https://img.shields.io/badge/Netlify-Online-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://asclepio-br.netlify.app)
 [![Python Version](https://img.shields.io/badge/Python-3.10%20%7C%203.11%20%7C%203.12-blue?logo=python&logoColor=white)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
 [![Pydantic v2](https://img.shields.io/badge/Pydantic-v2.0%2B-e92063?logo=pydantic&logoColor=white)](https://docs.pydantic.dev)
 [![NVIDIA NIM](https://img.shields.io/badge/NVIDIA%20NIM-Llama--3.3--70B-76b900?logo=nvidia&logoColor=white)](https://build.nvidia.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI Tests](https://img.shields.io/badge/CI-Passing-brightgreen?logo=github-actions&logoColor=white)](.github/workflows/ci.yml)
+
+🌐 **Deploy Online no Netlify:** [https://asclepio-br.netlify.app](https://asclepio-br.netlify.app)
 
 <p align="center">
   <b>Triagem inteligente, extração clínica estruturada, regras determinísticas de segurança e orientação ao paciente.</b>

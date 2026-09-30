@@ -38,6 +38,7 @@ logs/
 *.log
 
 # Arquivos Temporários e Compactados
+.netlify/
 extracted/
 *.zip
 *.tar.gz

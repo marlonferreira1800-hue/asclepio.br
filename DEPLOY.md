@@ -4,7 +4,25 @@ Este documento fornece as instruções para hospedar o **Asclépio** em ambiente
 
 ---
 
-## ☁️ Deploy no Render (Recomendado)
+## 🌐 Deploy no Netlify (Serverless)
+
+O Asclépio possui suporte nativo para o **Netlify** através do [`netlify.toml`](netlify.toml) e funções serverless em `netlify/functions/`:
+
+- **Site Oficial Netlify:** [https://asclepio-br.netlify.app](https://asclepio-br.netlify.app)
+- **Publish Directory:** `frontend`
+- **Functions Directory:** `netlify/functions`
+- **Rotas API Serverless:** `/api/status`, `/api/atendimentos`, `/api/atendimento`
+
+### Publicando no Netlify pelo CLI ou GitHub:
+
+1. Conecte o repositório `asclepio.br` no painel do [Netlify](https://app.netlify.com/).
+2. O Netlify detectará automaticamente o arquivo `netlify.toml`.
+3. (Opcional) Em **Site configuration > Environment variables**, adicione `NVIDIA_API_KEY` ou `OPENAI_API_KEY` para enriquecimento por LLM.
+4. Clique em **Deploy**.
+
+---
+
+## ☁️ Deploy no Render (Recomendado para Python Backend Completo)
 
 O repositório já inclui o arquivo [`render.yaml`](render.yaml) para provisionamento com IaC (Infrastructure as Code).
 
