@@ -5,8 +5,33 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "asclepio"
 version = "0.1.0"
-description = "Agente de pre-diagnostico medico multi-agente no terminal"
+description = "Sistema inteligente multi-agente de triagem médica e orientação clínica preliminar"
 readme = "README.md"
+license = { text = "MIT" }
+authors = [
+    { name = "Marlon Ferreira", email = "marlonferreira1800@gmail.com" }
+]
+keywords = [
+    "medical-ai",
+    "triage",
+    "healthcare",
+    "multi-agent",
+    "pydantic",
+    "fastapi",
+    "nvidia-nim",
+    "openai"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
 requires-python = ">=3.10"
 dependencies = [
     "openai>=1.0.0",
@@ -15,8 +40,20 @@ dependencies = [
     "pydantic>=2.0.0",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.1.0",
+]
+
 [project.scripts]
 asclepio = "asclepio:main"
+
+[project.urls]
+Homepage = "https://github.com/marlonferreira1800-hue/asclepio.br"
+Repository = "https://github.com/marlonferreira1800-hue/asclepio.br.git"
+Issues = "https://github.com/marlonferreira1800-hue/asclepio.br/issues"
 
 [tool.setuptools]
 py-modules = [
@@ -40,7 +77,13 @@ py-modules = [
     "safety",
     "safety_agent",
     "schemas",
+    "site_server",
     "state",
     "triage_agent",
     "triage_constants",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"

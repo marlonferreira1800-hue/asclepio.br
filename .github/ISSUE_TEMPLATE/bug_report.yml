@@ -1,0 +1,41 @@
+name: Relato de Bug / Problema
+description: Informe um comportamento inesperado ou erro no Asclépio
+title: "[BUG]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por ajudar a aprimorar o **Asclépio**! Por favor, preencha os detalhes abaixo.
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descrição do Bug
+      description: Uma explicação clara e objetiva do que aconteceu.
+    validations:
+      required: true
+  - type: textarea
+    id: reproducao
+    attributes:
+      label: Como Reproduzir
+      description: Passos para reproduzir o problema.
+      placeholder: |
+        1. Executar 'python asclepio.py' ou iniciar servidor web
+        2. Informar os dados...
+        3. O erro acontece na etapa...
+    validations:
+      required: true
+  - type: input
+    id: ambiente
+    attributes:
+      label: Ambiente
+      description: Sistema operacional, versão do Python e navegador (se aplicável).
+      placeholder: "Windows 11 / Python 3.12 / Chrome"
+    validations:
+      required: false
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs e Rastreamento de Erro
+      description: Cole a saída do terminal ou traceback relevante.
+      render: shell

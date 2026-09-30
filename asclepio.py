@@ -178,6 +178,8 @@ def main() -> None:
                 f"{item.get('queixa_principal') or 'sem queixa'}"
             )
         return
+    from config import validar_api_key
+    validar_api_key(obrigatorio=True)
     executar_atendimento()
 
 

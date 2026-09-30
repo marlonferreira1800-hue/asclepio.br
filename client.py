@@ -6,9 +6,21 @@ import sys
 # CLIENTE NVIDIA NIM — Camada de comunicação com a API
 # ──────────────────────────────────────────────────────────────
 class NvidiaClient:
-    def __init__(self, api_key: str, base_url: str, model: str):
-        self.client = OpenAI(api_key=api_key, base_url=base_url)
-        self.model_name = model
+    def __init__(self, api_key: str | None = None, base_url: str | None = None, model: str | None = None):
+        self.api_key = api_key or NVIDIA_API_KEY or ""
+        self.base_url = base_url or NVIDIA_BASE_URL or "https://integrate.api.nvidia.com/v1"
+        self.model_name = model or NVIDIA_MODEL or "meta/llama-3.3-70b-instruct"
+        self._client: OpenAI | None = None
+
+    @property
+    def client(self) -> OpenAI:
+        if self._client is None:
+            if not self.api_key or self.api_key.strip().lower() in {"sua_chave_aqui", "seu_api_key_aqui", "your_api_key_here", ""}:
+                raise RuntimeError(
+                    "NVIDIA_API_KEY não configurada. Defina sua chave no arquivo .env antes de executar chamadas de IA."
+                )
+            self._client = OpenAI(api_key=self.api_key, base_url=self.base_url)
+        return self._client
 
     def chamar(self, prompt_sistema: str, mensagem: str, historico: list | None = None) -> str:
         """
@@ -20,7 +32,7 @@ class NvidiaClient:
 
         # Converte histórico para o formato da API de Chat da OpenAI/NVIDIA
         mensagens_api = [{"role": "system", "content": prompt_sistema}]
-        
+
         for item in historico or []:
             role = item["role"]
             # O histórico interno usa 'model'; a API espera 'assistant'
@@ -30,7 +42,7 @@ class NvidiaClient:
                 "role": role,
                 "content": item["content"]
             })
-            
+
         # Adiciona a mensagem atual
         mensagens_api.append({
             "role": "user",
@@ -60,10 +72,6 @@ class NvidiaClient:
         return response.choices[0].message.content.strip()
 
 
-# Instância global do cliente
-try:
-    client = NvidiaClient(NVIDIA_API_KEY, NVIDIA_BASE_URL, NVIDIA_MODEL)
-except Exception as e:
-    console.print(f"\n[red]❌ Erro ao inicializar o cliente NVIDIA: {e}[/]")
-    sys.exit(1)
+# Instância global do cliente (inicializada preguiçosamente)
+client = NvidiaClient()
 

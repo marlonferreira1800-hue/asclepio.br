@@ -1,13 +1,51 @@
-.env
+# Ambientes Virtuais
 .venv/
+venv/
+ENV/
+env/
+
+# Configurações e Segredos
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# Python & Compilação
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+
+# Testes e Cobertura
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.ruff_cache/
+
+# Banco de Dados e Dados Locais
+data/
+*.db
+*.sqlite
+*.sqlite3
 relatorios/
 logs/
-data/
-*.egg-info/
+*.log
+
+# Arquivos Temporários e Compactados
 extracted/
 *.zip
-*.db
-*.log
+*.tar.gz
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
 .DS_Store
+Thumbs.db

@@ -83,11 +83,18 @@ NVIDIA_MODEL = os.getenv("NVIDIA_MODEL") or _dotenv.get("NVIDIA_MODEL", "meta/ll
 NVIDIA_BASE_URL = os.getenv("NVIDIA_BASE_URL") or _dotenv.get("NVIDIA_BASE_URL", "https://integrate.api.nvidia.com/v1")
 APP_NAME = os.getenv("APP_NAME") or _dotenv.get("APP_NAME", "Asclépio")
 
-PLACEHOLDER_KEYS = {"sua_chave_aqui", "seu_api_key_aqui", "your_api_key_here"}
+PLACEHOLDER_KEYS = {"sua_chave_aqui", "seu_api_key_aqui", "your_api_key_here", ""}
 
-if not NVIDIA_API_KEY or NVIDIA_API_KEY.strip().lower() in PLACEHOLDER_KEYS:
-    print("\n[ERRO] NVIDIA_API_KEY nao encontrado. Verifique o arquivo .env na pasta do projeto.")
-    print("Edite o .env e coloque sua chave real da NVIDIA NIM.")
-    sys.exit(1)
+
+def validar_api_key(obrigatorio: bool = True) -> bool:
+    """Verifica se a chave da API está configurada antes de iniciar execução interativa."""
+    if not NVIDIA_API_KEY or NVIDIA_API_KEY.strip().lower() in PLACEHOLDER_KEYS:
+        if obrigatorio:
+            print("\n[ERRO] NVIDIA_API_KEY não encontrada. Verifique o arquivo .env na pasta do projeto.")
+            print("Edite o .env e configure sua chave da NVIDIA NIM ou OpenAI.")
+            sys.exit(1)
+        return False
+    return True
+
 
 console = Console()

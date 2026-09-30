@@ -1,0 +1,30 @@
+name: Sugestão de Melhoria / Funcionalidade
+description: Proponha uma nova funcionalidade, melhoria clínica ou integração para o Asclépio
+title: "[FEAT]: "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ideias e sugestões são muito bem-vindas! Descreva como sua proposta melhora o fluxo de triagem ou a experiência do usuário.
+  - type: textarea
+    id: motivacao
+    attributes:
+      label: Qual é a necessidade ou problema resolvido?
+      description: Uma explicação do cenário atual e por que essa funcionalidade agregará valor.
+    validations:
+      required: true
+  - type: textarea
+    id: solucao
+    attributes:
+      label: Descrição da Solução Proposta
+      description: Como você imagina o funcionamento da funcionalidade.
+    validations:
+      required: true
+  - type: textarea
+    id: alternativas
+    attributes:
+      label: Alternativas Consideradas
+      description: Quais outras abordagens você considerou?
+    validations:
+      required: false
