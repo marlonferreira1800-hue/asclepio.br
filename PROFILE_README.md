@@ -52,8 +52,11 @@ Engenheiro de Software com foco no desenvolvimento de **sistemas inteligentes, a
         Anamnese guiada por IA, extração clínica estruturada, regras determinísticas de urgência e validação médica anti-alucinação.
       </p>
       <p align="center">
+        <a href="https://asclepio-br.netlify.app/">
+          <img src="https://img.shields.io/badge/Acessar_Online-asclepio--br.netlify.app-00C7B7?style=for-the-badge&logo=netlify&logoColor=white"/>
+        </a><br/>
         <a href="https://github.com/marlonferreira1800-hue/asclepio.br">
-          <img src="https://img.shields.io/badge/Ver_Repositório-asclepio.br-blue?style=for-the-badge&logo=github"/>
+          <img src="https://img.shields.io/badge/Código_Fonte-asclepio.br-blue?style=for-the-badge&logo=github"/>
         </a>
       </p>
     </td>

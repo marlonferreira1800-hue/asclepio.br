@@ -12,10 +12,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![CI Tests](https://img.shields.io/badge/CI-Passing-brightgreen?logo=github-actions&logoColor=white)](.github/workflows/ci.yml)
 
-🌐 **Deploy Online no Netlify:** [https://asclepio-br.netlify.app](https://asclepio-br.netlify.app)
+<p align="center">
+  <a href="https://asclepio-br.netlify.app/">
+    <img src="https://img.shields.io/badge/🚀_ACESSAR_APLICAÇÃO_ONLINE-asclepio--br.netlify.app-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" height="40" alt="Acessar Asclepio no Netlify"/>
+  </a>
+</p>
 
 <p align="center">
-  <b>Triagem inteligente, extração clínica estruturada, regras determinísticas de segurança e orientação ao paciente.</b>
+  <b>Triagem inteligente, extração clínica estruturada, regras determinísticas de segurança e orientação ao paciente.</b><br/>
+  🔗 Link oficial: <a href="https://asclepio-br.netlify.app/">https://asclepio-br.netlify.app/</a>
 </p>
 
 [Visão Geral](#-visão-geral) •
@@ -95,7 +100,11 @@ flowchart TD
 
 ## 🚀 Início Rápido
 
-### Pré-requisitos
+> ⚡ **Acesso Imediato no Navegador (Sem Instalação):**  
+> Você pode testar e usar o Asclépio agora mesmo em produção pelo Netlify:  
+> 👉 **[https://asclepio-br.netlify.app/](https://asclepio-br.netlify.app/)**
+
+### Pré-requisitos para Execução Local
 
 - Python 3.10 ou superior ([Download Python](https://www.python.org/downloads/))
 - Uma chave de API gratuita do [NVIDIA API Catalog](https://build.nvidia.com/) ou da OpenAI
