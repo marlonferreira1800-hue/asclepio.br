@@ -9,7 +9,6 @@
 [![GitHub Followers](https://img.shields.io/github/followers/marlonferreira1800-hue?label=Seguidores&style=for-the-badge&color=0969da&logo=github)](https://github.com/marlonferreira1800-hue)
 [![Top Languages](https://img.shields.io/github/languages/top/marlonferreira1800-hue/asclepio.br?style=for-the-badge&color=3776AB&logo=python&logoColor=white)](https://github.com/marlonferreira1800-hue)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Conectar-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com)
-[![Email](https://img.shields.io/badge/Email-Contato-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:marlonferreira1800@gmail.com)
 
 </div>
 
